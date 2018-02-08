@@ -5,6 +5,11 @@ public class EasyFactoryDesignMode {
     }
 }
 
+/**
+ * 简单工厂设计模式的应用场景：
+ * 比如说我在做Android底部选择的四个Fragment类就可以通过继承一个BaseFragment然后根据传入的str返回对应的fragment类
+ */
+
 
 abstract class Operation{
     abstract double getResult(double numberA,double numberB);
@@ -65,3 +70,4 @@ class OperationFactory{
         return operation;
     }
 }
+
