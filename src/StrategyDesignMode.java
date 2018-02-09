@@ -2,11 +2,11 @@ public class StrategyDesignMode {
     public static void main(String[] args) {
         //策略模式
         Context context = new Context(new ConcreteStrategyA());
-        context.ContextInterface();
+        context.contextInterface();
         Context context1 = new Context(new ConcreteStrategyB());
-        context1.ContextInterface();
+        context1.contextInterface();
         Context context2 = new Context(new ConcreteStrategyC());
-        context2.ContextInterface();
+        context2.contextInterface();
         System.out.println("-------------------------------------------");
         //策略模式和简单工厂模式的结合
         ImproveContext a = new ImproveContext("A");
@@ -32,13 +32,13 @@ public class StrategyDesignMode {
 //抽象算法类
 abstract class Strategy {
     //算法方法
-    public abstract void AlgorithmInterface();
+    public abstract void algorithmInterface();
 }
 
 class ConcreteStrategyA extends Strategy {
 
     @Override
-    public void AlgorithmInterface() {
+    public void algorithmInterface() {
         System.out.println("ConcreteStrategyA");
     }
 }
@@ -46,7 +46,7 @@ class ConcreteStrategyA extends Strategy {
 class ConcreteStrategyB extends Strategy {
 
     @Override
-    public void AlgorithmInterface() {
+    public void algorithmInterface() {
         System.out.println("ConcreteStrategyB");
     }
 }
@@ -54,7 +54,7 @@ class ConcreteStrategyB extends Strategy {
 class ConcreteStrategyC extends Strategy {
 
     @Override
-    public void AlgorithmInterface() {
+    public void algorithmInterface() {
         System.out.println("ConcreteStrategyC");
     }
 }
@@ -75,8 +75,8 @@ class Context {
     /**
      * 根据具体的策略对象，调用其算法的方法
      */
-    public void ContextInterface() {
-        strategy.AlgorithmInterface();
+    public void contextInterface() {
+        strategy.algorithmInterface();
     }
 }
 
@@ -103,6 +103,6 @@ class ImproveContext {
         }
     }
     public void getAlgorith() {
-        strategy.AlgorithmInterface();
+        strategy.algorithmInterface();
     }
 }
