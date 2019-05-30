@@ -1,7 +1,9 @@
+package factory;
+
 public class EasyFactoryDesignMode {
     public static void main(String[] args) {
         Operation operation = OperationFactory.createOperation("+");
-        operation.getResult(1, 2);
+        System.out.println("result:"+operation.getResult(1, 2));
     }
 }
 

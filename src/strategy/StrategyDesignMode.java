@@ -1,3 +1,5 @@
+package strategy;
+
 public class StrategyDesignMode {
     public static void main(String[] args) {
         //策略模式
@@ -17,7 +19,7 @@ public class StrategyDesignMode {
 }
 
 /**
- * 一、策略模式（Strategy）:它定义了算法家族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化不会影响到使用算法的客户。
+ * 一、策略模式（strategy.Strategy）:它定义了算法家族，分别封装起来，让它们之间可以互相替换，此模式让算法的变化不会影响到使用算法的客户。
  * 1、第一步先定义一个算法抽象类
  * 2、第二步创建三个实现类
  * 3、创建一个上下文对象，传入具体的实现类
@@ -39,7 +41,7 @@ class ConcreteStrategyA extends Strategy {
 
     @Override
     public void algorithmInterface() {
-        System.out.println("ConcreteStrategyA");
+        System.out.println("strategy.ConcreteStrategyA");
     }
 }
 
@@ -47,7 +49,7 @@ class ConcreteStrategyB extends Strategy {
 
     @Override
     public void algorithmInterface() {
-        System.out.println("ConcreteStrategyB");
+        System.out.println("strategy.ConcreteStrategyB");
     }
 }
 
@@ -55,7 +57,7 @@ class ConcreteStrategyC extends Strategy {
 
     @Override
     public void algorithmInterface() {
-        System.out.println("ConcreteStrategyC");
+        System.out.println("strategy.ConcreteStrategyC");
     }
 }
 
