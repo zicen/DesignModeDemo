@@ -1,4 +1,4 @@
-package adapter;
+package design.adapter;
 
 public class AdapterDesignMode {
     /**

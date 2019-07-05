@@ -1,4 +1,4 @@
-package decorator;
+package design.decorator;
 
 public class DecoratorDesignMode {
     public static void main(String[] args) {

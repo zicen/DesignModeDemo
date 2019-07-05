@@ -1,4 +1,4 @@
-package factory;
+package design.factory;
 
 public class EasyFactoryDesignMode {
     public static void main(String[] args) {
