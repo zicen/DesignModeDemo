@@ -1,7 +1,6 @@
 package arithmetic.sort;
 
-import graph.MyUtils;
-import sun.plugin.com.Utils;
+import arithmetic.graph.MyUtils;
 
 /**
  * 选择排序

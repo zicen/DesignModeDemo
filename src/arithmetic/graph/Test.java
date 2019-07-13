@@ -8,12 +8,12 @@ public class Test {
 
         System.out.println("程序开始");
         DenseGraph denseGraph = new DenseGraph(13, false);
-        ReadGraph.readGraph(denseGraph,"C:\\Users\\Administrator\\Desktop\\myCode\\ArithmeticDemo\\src\\graph\\testG1.txt");
+        ReadGraph.readGraph(denseGraph,"C:\\Users\\zhenquan\\Desktop\\code\\DesignModeDemo\\src\\arithmetic\\graph\\testG1.txt");
         denseGraph.show();
         System.out.println("程序结束");
 
         SparseGraph sparseGraph = new SparseGraph(13, false);
-        ReadGraph.readGraph(sparseGraph,"C:\\Users\\Administrator\\Desktop\\myCode\\ArithmeticDemo\\src\\graph\\testG1.txt");
+        ReadGraph.readGraph(sparseGraph,"C:\\Users\\zhenquan\\Desktop\\code\\DesignModeDemo\\src\\arithmetic\\graph\\testG1.txt");
         sparseGraph.show();
     }
 }
