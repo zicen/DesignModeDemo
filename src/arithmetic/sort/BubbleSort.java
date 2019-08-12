@@ -1,6 +1,7 @@
 package arithmetic.sort;
 
-import graph.MyUtils;
+
+import arithmetic.graph.MyUtils;
 
 /**
  * 冒泡排序：轻的上浮，沉的下降。两个相邻位置比较，如果前面的元素比后面的元素大就换位置

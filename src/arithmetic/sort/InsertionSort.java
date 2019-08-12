@@ -1,6 +1,7 @@
 package arithmetic.sort;
 
-import graph.MyUtils;
+
+import arithmetic.graph.MyUtils;
 
 /**
  * 插入排序
