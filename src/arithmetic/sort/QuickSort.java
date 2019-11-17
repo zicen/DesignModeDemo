@@ -7,6 +7,10 @@ import java.util.Random;
 
 /**
  * 快速排序
+ *
+ * 在每一轮挑选一个基准元素，并让其他比他大的元素移动到数列的一边，比他小的元素移动到数列的另一边，从而把数列拆解成两个部分（这种思路就叫做分治法）
+ * 平均时间复杂度 O（nlogn）
+ *
  */
 public class QuickSort {
     public static void quickSort(int arr[], int left, int right) {
