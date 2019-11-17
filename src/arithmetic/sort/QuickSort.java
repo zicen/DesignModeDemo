@@ -3,21 +3,69 @@ package arithmetic.sort;
 
 import arithmetic.graph.MyUtils;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
+import java.util.Stack;
 
 /**
  * 快速排序
- *
+ * <p>
  * 在每一轮挑选一个基准元素，并让其他比他大的元素移动到数列的一边，比他小的元素移动到数列的另一边，从而把数列拆解成两个部分（这种思路就叫做分治法）
  * 平均时间复杂度 O（nlogn）
- *
  */
 public class QuickSort {
+    /**
+     * 递归实现
+     *
+     * @param arr
+     * @param left
+     * @param right
+     */
     public static void quickSort(int arr[], int left, int right) {
         if (left > right) return;
-        int partitionIndex = partition2(arr, left, right);
+        int partitionIndex = partition(arr, left, right);
         quickSort(arr, left, partitionIndex - 1);
         quickSort(arr, partitionIndex + 1, right);
+    }
+
+    /**
+     * 非递归实现
+     *
+     * @param arr
+     * @param startIndex
+     * @param endIndex
+     */
+    public static void quickSort2(int arr[], int startIndex, int endIndex) {
+        final String START_INDEX = "startIndex";
+        final String END_INDEX = "endIndex";
+
+        // 用一个集合栈来代替递归的函数栈
+        Stack<Map<String, Integer>> quickSortStack = new Stack<>();
+        Map rootParm = new HashMap();
+        rootParm.put(START_INDEX, startIndex);
+        rootParm.put(END_INDEX, endIndex);
+        quickSortStack.push(rootParm);
+        // 循环结束条件：栈为空时
+        while (!quickSortStack.isEmpty()) {
+            Map<String, Integer> param = quickSortStack.pop();
+            //得到基准元素位置
+            int pivotIndex = partition2(arr, param.get(START_INDEX), param.get(END_INDEX));
+            //根据基准元素分成两部分
+            if (param.get(START_INDEX) < pivotIndex - 1) {
+                Map<String, Integer> leftParam = new HashMap<>();
+                leftParam.put(START_INDEX, param.get(START_INDEX));
+                leftParam.put(END_INDEX, pivotIndex - 1);
+                quickSortStack.push(leftParam);
+            }
+
+            if (pivotIndex + 1 < param.get(END_INDEX)) {
+                Map<String, Integer> rightParam = new HashMap<>();
+                rightParam.put(START_INDEX, pivotIndex + 1);
+                rightParam.put(END_INDEX, param.get(END_INDEX));
+                quickSortStack.push(rightParam);
+            }
+        }
     }
 
     /**
@@ -90,7 +138,7 @@ public class QuickSort {
         long currentTimeMillis2 = System.currentTimeMillis();
         System.out.println("快速排序 50000 个元素所用时间：" + (currentTimeMillis2 - currentTimeMillis));
 
-        quickSort(arr2, 0, arr2.length - 1);
+        quickSort2(arr2, 0, arr2.length - 1);
         MyUtils.printArr(arr2);
     }
 
