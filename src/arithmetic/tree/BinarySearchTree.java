@@ -169,6 +169,8 @@ public class BinarySearchTree {
      * 层序遍历 广度优先
      * 我们前面提到的都是通过递归实现的深度优先遍历,只要往下的节点还有符合要求的条件,那么就会继续西先往下执行
      * 而层序遍历是一种广度优先的遍历方式,先遍历根节点这一层,再遍历第二层,依次这样从上到下,从左到右.
+     *
+     * 使用队列进行层序遍历
      */
     public void levelTravelsal() {
         if (isEmpty()) return;
@@ -190,6 +192,7 @@ public class BinarySearchTree {
 
     /**
      * 上面用到的 前中后序遍历都是使用的 递归的调用方法，那么不用递归如何做呢？这里以前序遍历为例
+     * 绝大多数可以用递归解决的问题，其实都可以用栈来解决，因为他们都有回溯的特性。
      */
     public void preOrderNR() {
         Stack<Node> stack = new Stack<>();
